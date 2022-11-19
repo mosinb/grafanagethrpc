@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  rpcexporter:
+    image: hunterlong/gethexporter
+    container_name: rpcexporter
+    env_file: .env
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    depends_on:
+      rpcexporter:
+        condition: service_started
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - "8080:3000"
+    depends_on:
+      prometheus:
+        condition: service_started
+    volumes:
+      - ./grafana/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards

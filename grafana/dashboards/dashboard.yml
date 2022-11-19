@@ -1,0 +1,12 @@
+# grafana/provisioning/dashboards/dashboard.yml
+apiVersion: 1
+ 
+providers:
+  - name: 'Default'
+    orgId: 1
+    folder: ''
+    folderUid: ''
+    options:
+      path: /etc/grafana/provisioning/dashboards
+    disableDeletion: false
+    allowUiUpdates: true
