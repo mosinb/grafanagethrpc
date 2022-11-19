@@ -82,8 +82,9 @@ http://localhost:8080/d/FDX6YtOiz/geth-server
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
+![Login](/screenshots/grafanalogin.png?raw=true "Grafana Login")
+![Dashboard](/screenshots/dashboard.png?raw=true "Dashboard")
 
 Stop and remove the containers
 ```
